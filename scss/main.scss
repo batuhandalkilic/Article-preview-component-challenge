@@ -1,0 +1,128 @@
+@use 'base';
+@use 'variables'as v;
+
+
+
+.card{
+    @include v.flex-row;
+    align-items: stretch;
+    max-width: 1100px;
+    background-color: v.$light-grayish-blue;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0px;
+    border-radius: 10px;
+    
+
+    &-img{
+
+        width: 100%;
+
+        > img{
+            border-bottom-left-radius: 10px;
+            border-top-left-radius: 10px;
+           
+        }
+    }
+
+    &-section{
+        
+        @include v.flex-column;
+        padding: 2.5rem;
+    }
+
+    &-info{
+        @include v.flex-row;
+        justify-items: center;
+        width: 100%;
+        
+        
+        &-img{
+            margin-right: 1rem;
+            width: 70px;
+            height: 70px;
+            > img{
+                border-radius: 55%;
+            }
+        }
+
+        &-person{
+        margin-top: 1rem;
+
+        h4{
+            color: v.$very-dark-grayish-blue;
+          }
+        }
+
+        
+
+        .share{
+            
+            position: relative;
+            margin-left: auto;
+            border-radius: 50%;
+            background-color: v.$grayish-blue ;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+           
+            > i {
+               
+               
+                color: v.$very-dark-grayish-blue;
+                cursor: pointer;
+            }
+
+            
+
+            .açılsusamaçıl{
+
+                position: absolute;
+                @include v.flex-row;
+                display: none;
+                gap: 10px;
+                background-color: v.$very-dark-grayish-blue;
+                top: -70px;
+                width: 250px;
+                height: 50px;
+                border-radius: 10px;
+                
+                &::before{
+                    content: '';
+                    position: absolute;
+                    top: 50px;
+                    width: 0px;
+                    height: 0px;
+                    border-style: solid;
+                    border-width: 15px 15px 15px 15px ;
+                    border-color: v.$very-dark-grayish-blue transparent transparent transparent;
+                }
+
+                i{
+                    position: relative;
+                    
+                    color: white;
+                    border-radius: 50%;
+                }
+
+                span{
+                    color: yellow;
+                    letter-spacing: 0.3rem;
+                }
+
+            }
+
+        }
+    }
+}
+
+
+
+
+@include v.mobile-design;
+@include v.ipad;
